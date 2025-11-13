@@ -10,12 +10,12 @@ from vrp_solver.utils import DataLoader
 import json
 
 
-def run_single_day_optimization(target_dc=None, day="Mon", algorithm="ortools", time_limit=120):
+def run_single_day_optimization(target_dc="NDC", day="Mon", algorithm="ortools", time_limit=120):
     """
     Run single-day VRP optimization
 
     Args:
-        target_dc: DC to optimize for (e.g., 'DC_KLANG')
+        target_dc: DC to optimize for (e.g., 'NDC', 'EDC', 'DC_KLANG'). Defaults to 'NDC'.
         day: Day of week (Mon/Tue/Wed/Thu/Fri)
         algorithm: Solver to use (ortools/alns/clarke-wright)
         time_limit: Time limit in seconds for OR-Tools
@@ -146,7 +146,7 @@ def run_single_day_optimization(target_dc=None, day="Mon", algorithm="ortools", 
     return solution
 
 
-def run_weekly_optimization(target_dc=None, algorithm="ortools"):
+def run_weekly_optimization(target_dc="NDC", algorithm="ortools"):
     """
     Run optimization for entire week (Mon-Fri)
 

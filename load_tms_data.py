@@ -17,12 +17,12 @@ class TMSDataLoader:
         self.weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
         self.weekday_short = {"Monday": "Mon", "Tuesday": "Tue", "Wednesday": "Wed", "Thursday": "Thu", "Friday": "Fri"}
 
-    def load_all_data(self, target_dc=None):
+    def load_all_data(self, target_dc="NDC"):
         """
         Load all data files and prepare for optimization
 
         Args:
-            target_dc: Filter stores by DC (e.g., 'DC_KLANG'). If None, uses first DC found.
+            target_dc: Filter stores by DC (e.g., 'NDC', 'EDC', 'DC_KLANG'). Defaults to 'NDC'.
 
         Returns: stores, vehicles, depot_info, distance_matrix, time_matrix
         """
@@ -34,15 +34,9 @@ class TMSDataLoader:
         print("\n📦 Loading store data...")
         master_df = pd.read_csv(f"{self.input_dir}/master_store_data.csv")
 
-        # Filter by DC if specified
-        if target_dc:
-            master_df = master_df[master_df['fulfilment_dc_standard'] == target_dc]
-            print(f"   Filtered to DC: {target_dc}")
-        else:
-            # Use first DC
-            target_dc = master_df['fulfilment_dc_standard'].iloc[0]
-            master_df = master_df[master_df['fulfilment_dc_standard'] == target_dc]
-            print(f"   Auto-selected DC: {target_dc}")
+        # Filter by DC
+        master_df = master_df[master_df['fulfilment_dc_standard'] == target_dc]
+        print(f"   Filtered to DC: {target_dc}")
 
         # Filter stores with orders
         master_df = master_df[master_df['has_orders'] == True]
@@ -214,22 +208,23 @@ class TMSDataLoader:
 
     def _load_distance_matrix(self, stores, depot_id) -> Dict[str, Dict[str, float]]:
         """Load pre-calculated distance matrix"""
+        print("   Loading distance matrix from CSV...")
         dist_df = pd.read_csv(f"{self.input_dir}/store_distance_matrix_km.csv", index_col=0)
 
         # Convert to dict format
         distance_matrix = {}
-
-        # Add depot (assume depot is at position 0 or use average)
-        # For now, use depot as separate location
         distance_matrix[depot_id] = {}
 
         store_ids = [s.id for s in stores]
+        stores_in_matrix = 0
 
         # Extract submatrix for our stores
         for store1 in stores:
             if store1.id not in dist_df.index:
+                print(f"   ⚠️  Store {store1.id} not in distance matrix, skipping")
                 continue
 
+            stores_in_matrix += 1
             distance_matrix[store1.id] = {}
 
             for store2 in stores:
@@ -239,27 +234,31 @@ class TMSDataLoader:
                 dist = dist_df.loc[store1.id, store2.id]
                 distance_matrix[store1.id][store2.id] = float(dist) if not pd.isna(dist) else 0.0
 
-            # Depot distances (estimate from nearest store for now)
-            distance_matrix[store1.id][depot_id] = 10.0  # Default 10km
-            distance_matrix[depot_id][store1.id] = 10.0
+            # Depot distances (use reasonable estimates)
+            distance_matrix[store1.id][depot_id] = 20.0  # 20km default to depot
+            distance_matrix[depot_id][store1.id] = 20.0
 
         distance_matrix[depot_id][depot_id] = 0.0
 
+        print(f"   Loaded distances for {stores_in_matrix}/{len(stores)} stores")
         return distance_matrix
 
     def _load_time_matrix(self, stores, depot_id) -> Dict[str, Dict[str, float]]:
         """Load pre-calculated time matrix"""
+        print("   Loading time matrix from CSV...")
         time_df = pd.read_csv(f"{self.input_dir}/store_duration_matrix_min.csv", index_col=0)
 
         # Convert to dict format
         time_matrix = {}
-
         time_matrix[depot_id] = {}
+
+        stores_in_matrix = 0
 
         for store1 in stores:
             if store1.id not in time_df.index:
                 continue
 
+            stores_in_matrix += 1
             time_matrix[store1.id] = {}
 
             for store2 in stores:
@@ -269,12 +268,13 @@ class TMSDataLoader:
                 duration = time_df.loc[store1.id, store2.id]
                 time_matrix[store1.id][store2.id] = float(duration) if not pd.isna(duration) else 0.0
 
-            # Depot times
-            time_matrix[store1.id][depot_id] = 15.0  # Default 15 min
-            time_matrix[depot_id][store1.id] = 15.0
+            # Depot times (30 min default to/from depot)
+            time_matrix[store1.id][depot_id] = 30.0
+            time_matrix[depot_id][store1.id] = 30.0
 
         time_matrix[depot_id][depot_id] = 0.0
 
+        print(f"   Loaded times for {stores_in_matrix}/{len(stores)} stores")
         return time_matrix
 
     def get_available_dcs(self) -> List[str]:
