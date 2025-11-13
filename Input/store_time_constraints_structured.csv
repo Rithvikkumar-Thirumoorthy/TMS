@@ -1,0 +1,99 @@
+store_id,has_time_constraint,constraint_type,day_of_week,start_time,end_time,cutoff_time,direction,original_constraint
+B012,True,cutoff,Daily,,10:30,,after,No unloading at store: Daily - after 10:30am
+B048,True,blackout,Daily,12:30,14:30,,during,No unloading at store: Daily - 12:30pm to 2:30pm
+C001,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C003,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C006,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C007,True,cutoff,Daily,,10:00,,after,No unloading at store: Daily - after 10:00am
+C008,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C010,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C011,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C012,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C013,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C014,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C015,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C016,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C017,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C018,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C019,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C020,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C021,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C023,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C024,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C025,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C026,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C027,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C028,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C029,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C030,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C031,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C033,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C034,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C035,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C036,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C037,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C038,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C040,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C041,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C042,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C043,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C044,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C045,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C047,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C049,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C050,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C051,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C052,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C053,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C054,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C055,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C056,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C058,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C059,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C060,True,blackout,Friday,12:30,14:30,,during,"No unloading at store: Friday - 12:30pm to 2:30pm, Thursday - 8:00am to 12:00pm"
+C060,True,blackout,Thursday,08:00,12:00,,during,"No unloading at store: Friday - 12:30pm to 2:30pm, Thursday - 8:00am to 12:00pm"
+C061,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C062,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C063,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C065,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C067,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C069,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C070,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C071,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C074,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C076,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C077,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C078,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C079,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+C080,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+DD03,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+EA06,True,cutoff,Wednesday,,,13:00,before,No unloading at store: Wednesday - before 1:00pm
+EB07,True,cutoff,Monday,,16:00,,after,No unloading at store: Monday - after 4:00pm
+ED01,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+EK01,True,cutoff,Friday,,10:00,,after,"No unloading at store: Friday - after 10:00am, Saturday - after 10:00am"
+EK01,True,cutoff,Saturday,,10:00,,after,"No unloading at store: Friday - after 10:00am, Saturday - after 10:00am"
+EK04,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+ET01,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+P115,True,blackout,Monday,08:00,13:00,,during,"No unloading at store: Monday - 8:00am to 1:00pm, Thursday - 4:30pm to 9:00pm"
+P115,True,blackout,Thursday,16:30,21:00,,during,"No unloading at store: Monday - 8:00am to 1:00pm, Thursday - 4:30pm to 9:00pm"
+PD38,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+Q032,True,cutoff,Tuesday,,,10:00,before,No unloading at store: Tuesday - before 10:00am
+Q040,True,cutoff,Friday,,16:30,,after,No unloading at store: Friday - after 4:30pm
+Q046,True,cutoff,Saturday,,12:00,,after,No unloading at store: Saturday - after 12:00pm
+T008,True,blackout,Daily,12:00,14:00,,during,No unloading at store: Daily - 12:00pm to 2:00pm
+T019,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+TK01,True,blackout,Friday,12:30,14:30,,during,No unloading at store: Friday - 12:30pm to 2:30pm
+ZH03,True,cutoff,Daily,,20:00,,after,No unloading at store: Daily - after 8:00pm
+ZH12,True,cutoff,Wednesday,,15:00,,after,No unloading at store: Wednesday - after 3:00pm
+ZH14,True,cutoff,Daily,,10:00,,after,No unloading at store: Daily - after 10:00am
+ZH82,True,cutoff,Friday,,10:00,,after,"No unloading at store: Friday - after 10:00am, Saturday - after 10:00am"
+ZH82,True,cutoff,Saturday,,10:00,,after,"No unloading at store: Friday - after 10:00am, Saturday - after 10:00am"
+ZI71,True,cutoff,Wednesday,,,12:00,before,"No unloading at store: Wednesday - before 12:00pm, Saturday - after 1pm"
+ZJ09,True,blackout,Daily,11:00,14:00,,during,No unloading at store: Daily - 11:00am to 2:00pm
+ZJ79,True,cutoff,Monday,,16:30,,after,"No unloading at store: Monday - after 4:30pm, Thursday - after 4:30pm"
+ZJ79,True,cutoff,Thursday,,16:30,,after,"No unloading at store: Monday - after 4:30pm, Thursday - after 4:30pm"
+ZJ95,True,blackout,Daily,12:00,14:00,,during,No unloading at store: Daily - 12:00pm to 2:00pm
+ZL06,True,window,Daily,22:30,10:00,,allowed,"Limited timeframe: 10:30pm to 10:00am, 3:30pm to 5:00pm"
+ZT09,True,blackout,Daily,12:00,13:00,,during,No unloading at store: Daily - 12:00pm to 1:00pm
+ZT39,True,blackout,Daily,12:00,14:00,,during,No unloading at store: Daily - 12:00pm to 2:00pm
+ZT52,True,blackout,Friday,13:00,15:00,,during,No unloading at store: Friday - 1:00pm to 3:00pm
