@@ -2,7 +2,7 @@
 Route Constraint Checking Utilities
 """
 from datetime import datetime, time, timedelta
-from typing import Optional
+from typing import Optional, Tuple
 from ..models import Store, Vehicle, Route
 
 
@@ -112,6 +112,3 @@ class RouteConstraintChecker:
                 + distance_matrix.get(store.id, {}).get(next_store, 0)
             )
             return new_dist - old_dist
-
-
-from typing import Tuple
