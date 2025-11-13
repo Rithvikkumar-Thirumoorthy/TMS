@@ -60,22 +60,21 @@ class TMSDataLoader:
         print("\n🚛 Loading fleet...")
         fleet_df = pd.read_csv(f"{self.input_dir}/fleet_cleaned.csv")
 
-        # Find corresponding DC code for the target_dc
-        dc_df = pd.read_csv(f"{self.input_dir}/dc_locations_cleaned.csv")
-        dc_mapping = dict(zip(dc_df['dc_name_standard'], dc_df['dc_code']))
+        # Filter for STORE_DELIVERY purpose only
+        fleet_df = fleet_df[fleet_df['purpose'] == 'STORE_DELIVERY']
+        print(f"   Filtered to STORE_DELIVERY vehicles: {len(fleet_df)}")
 
-        # Map DC names
-        dc_code_variants = []
-        if target_dc in dc_mapping:
-            dc_code_variants.append(dc_mapping[target_dc])
-        dc_code_variants.extend(['EDC', 'NDC', 'SDC'])  # Common DC codes
-
-        # Filter fleet by DC
-        fleet_df = fleet_df[fleet_df['owning_dc'].isin(dc_code_variants)]
+        # Filter fleet by specific DC
+        # The owning_dc in fleet uses the standard names (NDC, EDC, HQ) not the codes (DC002, etc.)
+        fleet_df = fleet_df[fleet_df['owning_dc'] == target_dc]
+        print(f"   Filtered to DC '{target_dc}' vehicles: {len(fleet_df)}")
 
         if len(fleet_df) == 0:
-            print(f"   ⚠️  No vehicles found for {target_dc}, using all vehicles")
-            fleet_df = pd.read_csv(f"{self.input_dir}/fleet_cleaned.csv")
+            print(f"   ⚠️  No STORE_DELIVERY vehicles found for DC '{target_dc}'")
+            all_fleet = pd.read_csv(f"{self.input_dir}/fleet_cleaned.csv")
+            all_fleet = all_fleet[all_fleet['purpose'] == 'STORE_DELIVERY']
+            print(f"   Available DCs in fleet: {all_fleet['owning_dc'].unique().tolist()}")
+            raise ValueError(f"No STORE_DELIVERY vehicles available for DC: {target_dc}")
 
         vehicles = self._create_vehicles(fleet_df)
         print(f"   ✓ Created {len(vehicles)} vehicle objects")
